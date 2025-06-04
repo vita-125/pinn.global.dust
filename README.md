@@ -1,0 +1,1 @@
+echo # pinn.global.dust
