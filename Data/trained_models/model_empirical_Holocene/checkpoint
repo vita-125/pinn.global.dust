@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/Data/trained_models/model_empirical_Holocene/model_empirical_Holocene.ckpt-60000.ckpt"
+all_model_checkpoint_paths: "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/Data/trained_models/model_empirical_Holocene/model_empirical_Holocene.ckpt-60000.ckpt"

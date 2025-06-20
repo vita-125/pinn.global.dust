@@ -50,7 +50,10 @@ def plot_dust_deposition_map(df_PINN, df_empirical, title, name_to_save, figure_
     fig, ax = plt.subplots(figsize=(12, 10))
 
     # Plot continents
-    world.dissolve(by='continent').boundary.plot(ax=ax, color='black', linewidth=0.8)
+    path_to_shapefile = "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/ne_110m_admin_0_countries.shp"
+    world = gpd.read_file(path_to_shapefile)
+
+    world.boundary.plot(ax=ax, color='black', linewidth=0.8)
 
     # Plot the empirical dataset in geopandas
     df_holocene_empirical_geo.plot(column='log_dep',
@@ -278,7 +281,11 @@ def plot_dust_deposition_simulated(df, title, name_to_save, figure_save_path, la
     ax.set_yticks(np.arange(-90, 91, 30))
 
     # Plot continents
-    world.dissolve(by='continent').boundary.plot(ax=ax, color='black', linewidth=0.8)
+
+    path_to_shapefile = "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/ne_110m_admin_0_countries.shp"
+    world = gpd.read_file(path_to_shapefile)
+
+    world.boundary.plot(ax=ax, color='black', linewidth=0.8)
 
     # Plot the GeoDataFrame
     df_dust_geopandas.plot(column=label_str,
@@ -335,7 +342,11 @@ def plot_dust_deposition_map_zoom(df, title, name_to_save, figure_save_path, lab
     ax.set_yticks(np.arange(-70, 0, -10))
 
     # Plot continents
-    world.dissolve(by='continent').boundary.plot(ax=ax, color='black', linewidth=0.8)
+    path_to_shapefile = "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/ne_110m_admin_0_countries.shp"
+    world = gpd.read_file(path_to_shapefile)
+
+    world.boundary.plot(ax=ax, color='black', linewidth=0.8)
+
 
     # Filter longitude
     df_dust_geopandas = df_dust_geopandas[(df_dust_geopandas["lat"] > -70) & (df_dust_geopandas["lat"] < -10) &

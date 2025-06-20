@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 def wind_tf_interp(x, xs, ys):
     # Determine the output data type
     ys = tf.convert_to_tensor(ys)

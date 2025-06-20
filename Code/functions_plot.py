@@ -1,3 +1,14 @@
+FIGURE_PATH = 'C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/Code/figures'
+import os
+
+if not os.path.exists(FIGURE_PATH):
+    os.makedirs(FIGURE_PATH)
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import geopandas as gpd
+from scipy.stats import norm
+
 params = {'axes.labelsize': 25,
           'axes.titlesize': 30,
           'xtick.labelsize': 25,
@@ -32,7 +43,10 @@ def plot_dust_deposition_map(df, title, name_to_save, label_str='log_dep', url_s
     ax.set_yticks(np.arange(-90, 91, 30))
 
     # Plot continents
-    world.dissolve(by='continent').boundary.plot(ax=ax, color='black', linewidth=0.8)
+    path_to_shapefile = "C:/Users/vitas/Desktop/LE PINN/pinn.global.dust/pinn.global.dust/ne_110m_admin_0_countries.shp"
+    world = gpd.read_file(path_to_shapefile)
+
+    world.boundary.plot(ax=ax, color='black', linewidth=0.8)
 
     # Plot the GeoDataFrame
     df_dust_geopandas.plot(column=label_str,
