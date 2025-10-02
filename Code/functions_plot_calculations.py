@@ -25,7 +25,7 @@ params_plot = {
 plt.rcParams.update(params_plot)
 
 
-def plot_dust_deposition_map(df_PINN, df_empirical, title, name_to_save, figure_save_path, label_str='log_dep', measure_units='Dust flux log$_{10}$[g m$^{-2}$ a$^{-1}$]', limit_bar=3.2):
+def plot_dust_deposition_map(df_PINN,df_empirical, title, name_to_save, figure_save_path, label_str='log_dep', measure_units='Dust flux log$_{10}$[g m$^{-2}$ a$^{-1}$]', limit_bar=3.2):
     """
     Generate the matplot of the calculation of the PINN.
     Also, the empirical dataset is included in the plot
@@ -362,7 +362,6 @@ def plot_dust_deposition_map_zoom(df, title, name_to_save, figure_save_path, lab
                   vmax=limit_bar,
                   aspect='auto')  # Maintain the aspect ratio of the plot
 
-    # Add colorbar
     cbar = plt.colorbar(h, ax=ax, orientation='horizontal', pad=0.2)
     cbar.set_label(measure_units)
 
